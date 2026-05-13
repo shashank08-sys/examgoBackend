@@ -50,7 +50,7 @@ public class AuthController {
         }
         throw new RuntimeException("Invalid credentials");
     }
-// this is the post mapping for forgot password, it will receive the email from the frontend and call the userService to initiate the password reset process. The userService will check if the email exists in the database, generate a reset token, and send a reset link to the user's email. The reset link will contain the token as a query parameter, which can be used to verify the user's identity when they click on the link.
+// this is the post mapping for forgot password, it will receive the email from the and call the userService to initiate the password reset process. The userService will check if the email exists in the database, generate a reset token, and send a reset link to the user's email. The reset link will contain the token as a query parameter, which can be used to verify the user's identity when they click on the link.
     @PostMapping("/forgot-password")
     public String forgotPassword(@RequestBody Map<String, String> request) {
         logger.info("/auth/forgot-password endpoint hit with email: {}", request.get("email"));
